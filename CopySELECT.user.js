@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           CopySELECT
-// @version        0.2.1
+// @version        0.2.2
 // @namespace      cyvb
 // @author         cyvb
 // @description    Click a SELECT tag to copy selected item's text
@@ -17,6 +17,10 @@
     'use strict';
     $('body').click(function(event) {
         if (event.target.tagName == 'SELECT') {
+            var sel = window.getSelection();
+            if (sel.rangeCount > 0) {
+                sel.removeRange(sel.getRangeAt(sel.rangeCount - 1));
+            }
             var cTag = event.target;
             var sItem = cTag.options[cTag.selectedIndex].text;
             var $temp = $('<p>');
@@ -28,7 +32,6 @@
             range.selectNode(clipNode);
             window.getSelection().addRange(range);
             document.execCommand('copy');
-            window.getSelection().removeAllRanges();
             $temp.remove();
         }
     });
