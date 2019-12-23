@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name           Copy SELECT
-// @version        0.1
+// @name           CopySELECT
+// @version        0.2
 // @namespace      cyvb
 // @author         cyvb
 // @description    Click a SELECT tag to copy selected item's text
@@ -28,7 +28,7 @@
             range.selectNode(clipNode);
             window.getSelection().addRange(range);
             document.execCommand('copy');
-            window.getSelection().removeAllRanges();
+            window.getSelection().removeRange(range);
             $temp.remove();
         }
     });
