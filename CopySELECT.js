@@ -4,6 +4,7 @@
 // @namespace      cyvb
 // @author         cyvb
 // @description    Click a SELECT tag to copy selected item's text
+// @updateURL      https://raw.githubusercontent.com/cyvb/CopySELECT/master/CopySELECT.js
 // @include        http*://*.*/*
 // @require        https://code.jquery.com/jquery-3.4.1.slim.min.js
 // @grant          none
